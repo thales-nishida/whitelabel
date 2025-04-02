@@ -9,7 +9,7 @@ import whitelabel.module.Color
 import whitelabel.module.Base64
 
 class WhiteLabelValidator(
-    private val whiteLabel: WhiteLabel,
+    private val whiteLabel: Whitelabel,
     private val anHandler: ValidationHandler
 ) : Validator(anHandler) {
 

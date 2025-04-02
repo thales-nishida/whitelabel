@@ -7,14 +7,14 @@ import whitelabel.module.Base64
 import whitelabel.module.Theme
 import java.time.Instant
 
-class WhiteLabel private constructor(
-    val anId: WhiteLabelID,
+class Whitelabel private constructor(
+    val anId: WhitelabelID,
     val aPartner: String,
     val theme: Theme,
     val createdAt: Instant = Instant.now(),
     var updatedAt: Instant = Instant.now(),
     var deletedAt: Instant? = null,
-) : AggregatorRoot<WhiteLabelID>(anId) {
+) : AggregatorRoot<WhitelabelID>(anId) {
     companion object {
         fun newWhiteLabel(
             partner: String,
@@ -26,7 +26,7 @@ class WhiteLabel private constructor(
             whiteBase64: Base64,
             blackBase64: Base64,
             animatedContent: Base64
-        ) : WhiteLabel {
+        ) : Whitelabel {
             val theme = Theme(
                 aPrimaryColor = primaryColor,
                 aSecondaryColor = secondaryColor,
@@ -38,8 +38,8 @@ class WhiteLabel private constructor(
                 aAnimatedContent = animatedContent
             )
 
-            val whitelabel = WhiteLabel(
-                anId = WhiteLabelID.unique(),
+            val whitelabel = Whitelabel(
+                anId = WhitelabelID.unique(),
                 aPartner = partner,
                 theme = theme,
             )
