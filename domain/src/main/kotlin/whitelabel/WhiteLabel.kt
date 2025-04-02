@@ -3,7 +3,7 @@ package whitelabel
 import AggregatorRoot
 import validation.ValidationHandler
 import whitelabel.module.Color
-import whitelabel.module.Logo
+import whitelabel.module.Base64
 import whitelabel.module.Theme
 import java.time.Instant
 
@@ -21,20 +21,20 @@ class WhiteLabel private constructor(
             primaryColor: Color,
             secondaryColor: Color,
             progressColor: Color,
-            splashScreenIcon: Logo,
-            coloredLogo: Logo,
-            whiteLogo: Logo,
-            blackLogo: Logo,
-            animatedContent: String
+            splashScreenIcon: Base64,
+            coloredBase64: Base64,
+            whiteBase64: Base64,
+            blackBase64: Base64,
+            animatedContent: Base64
         ) : WhiteLabel {
             val theme = Theme(
                 aPrimaryColor = primaryColor,
                 aSecondaryColor = secondaryColor,
                 aProgressColor = progressColor,
                 aSplashScreenIcon = splashScreenIcon,
-                aColoredLogo = coloredLogo,
-                aWhiteLogo = whiteLogo,
-                aBlackLogo = blackLogo,
+                aColoredBase64 = coloredBase64,
+                aWhiteBase64 = whiteBase64,
+                aBlackBase64 = blackBase64,
                 aAnimatedContent = animatedContent
             )
 
